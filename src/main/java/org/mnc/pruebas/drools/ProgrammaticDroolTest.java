@@ -43,7 +43,8 @@ public class ProgrammaticDroolTest
         kfs.write("src/main/resources/META-INF/kmodule.xml", kieModuleModel.toXML());
         kfs.write("src/main/resources/rule0.drl", kieServices.getResources().newInputStreamResource(ProgrammaticDroolTest.class.getResourceAsStream("/rule0.drl")));
 
-        kfs.write("src/main/resources/simple-process.jpdl.xml", kieServices.getResources().newInputStreamResource(ProgrammaticDroolTest.class.getResourceAsStream("/simple-process.jpdl.xml")));
+        //kfs.write("src/main/resources/simple-process.jpdl.xml", kieServices.getResources().newInputStreamResource(ProgrammaticDroolTest.class.getResourceAsStream("/simple-process.jpdl.xml")));
+        kfs.write("src/main/resources/hello-world.bpmn2.xml", kieServices.getResources().newInputStreamResource(ProgrammaticDroolTest.class.getResourceAsStream("/hello-world.bpmn2.xml")));
 
         KieBuilder kieBuilder = kieServices.newKieBuilder(kfs);
         kieBuilder.buildAll();
@@ -72,11 +73,10 @@ public class ProgrammaticDroolTest
         }
         System.out.println("----------");
 
-        ProcessInstance processInstance = kSession.createProcessInstance("simple", null);
+        ProcessInstance processInstance = kSession.createProcessInstance("com.sample.HelloWorld", null);
         System.out.println(processInstance.getProcessId());
         System.out.println(processInstance.getProcessName());
         System.out.println(processInstance.getId());
         System.out.println(processInstance.getState());
-
     }
 }
