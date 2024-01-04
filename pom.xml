@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <kieVersion>6.0.1.Final</kieVersion>
+        <kieVersion>6.1.0.Final</kieVersion>
         <droolsVersion>${kieVersion}</droolsVersion>
         <jbpmVersion>${kieVersion}</jbpmVersion>
     </properties>
